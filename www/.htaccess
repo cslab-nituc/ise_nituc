@@ -1,0 +1,7 @@
+<Files ~ "^\.(htaccess|htpasswd)$">
+deny from all
+</Files>
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(www\.ise-unct\.sakura\.ne\.jp)(:80)? [NC]
+RewriteRule ^(.*) https://ise-unct.sakura.ne.jp/$1 [R=301,L]
+order deny,allow
